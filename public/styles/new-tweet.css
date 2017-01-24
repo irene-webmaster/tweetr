@@ -1,0 +1,27 @@
+.new-tweet {
+  background-color: #ccc;
+  padding: 0 1em 1em;
+  border: solid 1px #777;
+  border-radius: 4px;
+}
+
+.new-tweet h2 {
+  padding: 0px;
+  margin: 1em 0;
+  border-bottom: solid 1px #666;
+  font-size: 1.6em;
+}
+
+.new-tweet .editor {
+  width: 100%;
+  height: 60px;
+  margin-bottom: 5px;
+  padding: 5px;
+}
+
+.new-tweet .counter {
+  float: right;
+  padding-top: 7px;
+  font-size: 0.9em;
+  font-style: italic;
+}
