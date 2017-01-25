@@ -21,5 +21,3 @@ $(document).ready(function() {
 
   updateCounter($('.counter'), $(textAreaSelector).val());
 });
-
-// 'textarea[name="text"]'

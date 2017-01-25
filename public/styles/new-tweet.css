@@ -1,5 +1,6 @@
 .new-tweet {
   background-color: #ccc;
+  margin-bottom: 40px;
   padding: 0 1em 1em;
   border: solid 1px #777;
   border-radius: 4px;
@@ -29,3 +30,56 @@
 .negative-num {
   color: red;
 }
+
+.tweet {
+  margin-bottom: 20px;
+  border: solid 1px #777;
+  border-radius: 4px;
+}
+
+.tweet header {
+  background-color: #ccc;
+  padding: 0.5em;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.tweet .avatar {
+  border-radius: 3px;
+}
+
+.tweet .fullname {
+  font-size: 1.4em;
+  vertical-align: top;
+}
+
+.tweet .username {
+  float: right;
+  padding-top: 5px;
+  color: #666;
+  font-size: 0.9em;
+  font-weight: 300;
+}
+
+.tweet .tweet-body {
+  padding: 2.2em 1em;
+}
+
+.tweet footer {
+  height: 40px;
+  padding: 0.8em;
+  border-top: solid 1px #ccc;
+  color: #888;
+  font-size: 0.9em;
+  font-weight: 300;
+}
+
+.tweet .social {
+  display: none;
+  float: right;
+}
+
+.tweet:hover .social {
+  display: block;
+}
+
