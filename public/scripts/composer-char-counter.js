@@ -1,18 +1,25 @@
 $(document).ready(function() {
   const max = 140;
-  $('.new-tweet textarea').on('keyup', function(e) {
-    let text = $( this ).val();
-    let numOfEl = text.length;
-    let remainingEl = max - numOfEl;
+  const textAreaSelector = '.new-tweet textarea';
+  const negativeNumClass = 'negative-num';
 
-    $(this).closest('.new-tweet').find('.counter').empty().text(remainingEl);
+  function updateCounter($counter, tweetContent) {
+    let numOfEl = tweetContent.length;
+    let remainingEl = max - numOfEl;
+    $counter.text(remainingEl);
 
     if(remainingEl < 0) {
-      $('.counter').addClass('negative-num');
+      $counter.addClass(negativeNumClass);
     } else {
-      $('.counter').removeClass('negative-num');
+      $counter.removeClass(negativeNumClass);
     }
+  }
+
+  $(textAreaSelector).on('input', function(e) {
+    updateCounter($(this).siblings('.counter'), $(this).val());
   });
+
+  updateCounter($('.counter'), $(textAreaSelector).val());
 });
 
 // 'textarea[name="text"]'
