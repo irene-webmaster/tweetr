@@ -25,3 +25,7 @@
   font-size: 0.9em;
   font-style: italic;
 }
+
+.negative-num {
+  color: red;
+}
