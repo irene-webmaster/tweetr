@@ -39,6 +39,7 @@
 
 .tweet header {
   background-color: #ccc;
+  height: 70px;
   padding: 0.5em;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
@@ -46,6 +47,7 @@
 
 .tweet .avatar {
   border-radius: 3px;
+  margin-right: 8px;
 }
 
 .tweet .fullname {
@@ -83,3 +85,14 @@
   display: block;
 }
 
+.tweet i {
+  margin-left: 5px;
+}
+
+.error {
+  background-color: #ffccbb;
+  margin-bottom: 10px;
+  padding: 4px 7px 4px;
+  border: solid 1px red;
+  color: red;
+}
