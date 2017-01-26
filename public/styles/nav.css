@@ -8,6 +8,11 @@
   color: #e8fdff;
 }
 
+#nav-bar .nav-wrapper {
+  width: 800px;
+  margin: 0 auto;
+}
+
 #nav-bar .logo, #nav-bar .header {
   display: inline-block;
   vertical-align: middle;
@@ -19,4 +24,21 @@
 
 #nav-bar .header {
   font-size: 1.8em;
+}
+
+.compose-btn {
+  background-color: #ccc;
+  display: inline-block;
+  float: right;
+  margin-top: 15px;
+  padding: 10px;
+  border: solid 1px #666;
+  border-radius: 5px;
+  font-size: 1.3em;
+  color: #00a087;
+  text-decoration: none;
+}
+
+.compose-btn:hover {
+  background-color: #fff;
 }

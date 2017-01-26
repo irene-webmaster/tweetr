@@ -33,7 +33,7 @@ $(function() {
     $('#tweets-container').html("");
     for(var tweet of tweets) {
       var singleTweet = createTweetElement(tweet);
-      $('#tweets-container').append(singleTweet);
+      $('#tweets-container').prepend(singleTweet);
     }
   }
 
@@ -46,21 +46,21 @@ $(function() {
     });
   }
 
-
+// Form validation and tweets loading
   $('.new-tweet').find('[action="/tweets"]').on('submit', function(event) {
-    var textarea = $(this).find('.editor').val();
+    var textarea = $(this).find('.editor');
     var $error = $(this).closest('.new-tweet').find('.error');
 
-    if(textarea.length === 0) {
+    if(textarea.val().length === 0) {
       $error.text('Please enter your text');
       $error.show();
       return false;
-    } else if (textarea.length > 140) {
+    } else if (textarea.val().length > 140) {
       $error.text('Sorry you exceeded the 140 character limit');
       $error.show();
       return false;
     } else {
-        $error.hide();
+      $error.hide();
     }
 
     event.preventDefault();
@@ -70,10 +70,24 @@ $(function() {
       data: $(this).serialize()
     }).then(function() {
       loadTweets();
-    })
+    });
+
+    textarea.val('');
   });
 
   loadTweets();
+
+  $('.new-tweet').hide();
   $('.new-tweet .error').hide();
+
+
+  // Compose button implementation
+  $('#nav-bar').find('.compose-btn').on('click', function(event) {
+    event.preventDefault();
+    $('.new-tweet').slideToggle('slow', function() {
+      $('.new-tweet form textarea').focus();
+    });
+  });
+
 });
 
