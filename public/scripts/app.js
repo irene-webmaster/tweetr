@@ -30,57 +30,35 @@ $(function() {
   }
 
   function renderTweets(tweets) {
+    $('#tweets-container').html("");
     for(var tweet of tweets) {
       var singleTweet = createTweetElement(tweet);
       $('#tweets-container').append(singleTweet);
     }
   }
 
-  // function loadTweets() {
-  //   $('.new-tweet').find('[action="/tweets"]').on('submit', function(event) {
-  //     event.preventDefault();
-  //     $.ajax({
-  //       url: '/tweets',
-  //       method: 'post',
-  //       data: $(this).serialize()
-  //     }).then(function(data) {
-  //       renderTweets(data);
-  //     })
-  //   });
-  // }
-
   function loadTweets() {
-    $('.new-tweet').find('[action="/tweets"]').on('submit', function(event) {
-
-      var textarea = $(this).find('.editor').val();
-
-      var $error = $(this).closest('.new-tweet').find('.error');
-
-      if(textarea.length === 0) {
-        $error.text('Please enter your text');
-        $error.show();
-        return false;
-      } else if (textarea.length > 140) {
-        $error.text('Sorry you exceeded the 140 character limit');
-        $error.show();
-        return false;
-      } else {
-        $error.hide();
-        event.preventDefault();
-      }
-      $.ajax({
-        url: '/tweets',
-        method: 'get',
-        success: function (data) {
-          console.log('Success: ', data);
-          renderTweets(data);
-        }
-      });
+    $.ajax({
+      url: '/tweets',
+      method: 'get'
+    }).then(function(tweets) {
+      renderTweets(tweets);
     });
   }
 
-  loadTweets();
 
+  $('.new-tweet').find('[action="/tweets"]').on('submit', function(event) {
+    event.preventDefault();
+    $.ajax({
+      url: '/tweets',
+      method: 'post',
+      data: $(this).serialize()
+    }).then(function() {
+      loadTweets();
+    })
+  });
+
+  loadTweets();
   $('.new-tweet .error').hide();
 });
 
