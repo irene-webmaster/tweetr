@@ -4,7 +4,7 @@ $(document).ready(function() {
   const negativeNumClass = 'negative-num';
 
   function updateCounter($counter, tweetContent) {
-    let numOfEl = tweetContent.length;
+    let numOfEl = tweetContent.trim().length;
     let remainingEl = max - numOfEl;
     $counter.text(remainingEl);
 
@@ -15,8 +15,15 @@ $(document).ready(function() {
     }
   }
 
+  function hideError() {
+    $('.new-tweet .error').hide();
+  }
+
   $(textAreaSelector).on('input', function(e) {
     updateCounter($(this).siblings('.counter'), $(this).val());
+    if($(this).val().length > 0 && $(this).val().length <= 140) {
+      hideError();
+    }
   });
 
   updateCounter($('.counter'), $(textAreaSelector).val());

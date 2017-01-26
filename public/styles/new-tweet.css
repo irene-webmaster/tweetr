@@ -65,6 +65,7 @@
 
 .tweet .tweet-body {
   padding: 2.2em 1em;
+  word-wrap: break-word;
 }
 
 .tweet footer {

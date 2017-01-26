@@ -30,7 +30,7 @@ $(function() {
   }
 
   function renderTweets(tweets) {
-    $('#tweets-container').html("");
+    $('#tweets-container').html('');
     for(var tweet of tweets) {
       var singleTweet = createTweetElement(tweet);
       $('#tweets-container').prepend(singleTweet);
@@ -49,13 +49,15 @@ $(function() {
 // Form validation and tweets loading
   $('.new-tweet').find('[action="/tweets"]').on('submit', function(event) {
     var textarea = $(this).find('.editor');
+    var tweetContent = textarea.val().trim();
     var $error = $(this).closest('.new-tweet').find('.error');
+    var counter = $(this).find('.counter');
 
-    if(textarea.val().length === 0) {
+    if(tweetContent.length === 0) {
       $error.text('Please enter your text');
       $error.show();
       return false;
-    } else if (textarea.val().length > 140) {
+    } else if (tweetContent.length > 140) {
       $error.text('Sorry you exceeded the 140 character limit');
       $error.show();
       return false;
@@ -73,6 +75,7 @@ $(function() {
     });
 
     textarea.val('');
+    counter.text('140');
   });
 
   loadTweets();
@@ -85,7 +88,7 @@ $(function() {
   $('#nav-bar').find('.compose-btn').on('click', function(event) {
     event.preventDefault();
     $('.new-tweet').slideToggle('slow', function() {
-      $('.new-tweet form textarea').focus();
+      $('.new-tweet textarea').focus();
     });
   });
 
