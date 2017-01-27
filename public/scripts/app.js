@@ -5,14 +5,10 @@
  */
 $(function() {
   function createTweetElement(tweet) {
-    var now = (new Date()).getTime();
-    var tweetCreatedTime = tweet.created_at;
-    var tweetTime = Math.floor((now - tweetCreatedTime) / (1000 * 60 * 60 * 24));
-
     var $tweet = $('<article>').addClass('tweet');
     var $header = $('<header>');
     var $body = $('<div>').addClass('tweet-body').text(tweet.content.text);
-    var $footer = $('<footer>').text(tweetTime + ' days ago');
+    var $footer = $('<footer>').text(calculateTime(tweet));
     var $avatar = $('<img />', {src: tweet.user.avatars.small}).addClass('avatar');
     var $fullname = $('<span>').addClass('fullname').text(tweet.user.name);
     var $username = $('<span>').addClass('username').text(tweet.user.handle);
@@ -27,6 +23,34 @@ $(function() {
     $social.append($like, $retweet, $flag);
 
     return $tweet;
+  }
+
+  function calculateTime(tweet) {
+    var timeNow = (new Date()).getTime();
+    var tweetCreatedTime = tweet.created_at;
+    var timeDiff = Math.round((timeNow - tweetCreatedTime) / 1000);
+
+    if (timeDiff < 60){
+      return "just now";
+    }
+
+    var brackets = [
+      {unit: 'minutes', maxValue: 3600, divisor: 60},
+      {unit: 'hour', maxValue: 86400, divisor: 3600},
+      {unit: 'day', maxValue: 86400 * 7, divisor: 86400},
+      {unit: 'week', maxValue: 86400 * 30, divisor: 86400 * 7},
+      {unit: 'month', maxValue: 86400 * 365, divisor: 86400 * 30}
+    ];
+
+    for (var i=0; i < brackets.length; i++) {
+      var bracket = brackets[i];
+      if (timeDiff < bracket.maxValue) {
+        var quantity = Math.round(timeDiff / bracket.divisor);
+        return quantity + ' ' + bracket.unit + ' ago';
+      }
+    }
+
+    return "Over a year ago";
   }
 
   function renderTweets(tweets) {
