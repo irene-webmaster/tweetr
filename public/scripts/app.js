@@ -87,8 +87,8 @@ $(function() {
   // Compose button implementation
   $('#nav-bar').find('.compose-btn').on('click', function(event) {
     event.preventDefault();
-    $('.new-tweet').slideToggle('slow', function() {
-      $('.new-tweet textarea').focus();
+    $('#compose-tweet').slideToggle('slow', function() {
+      $('#compose-tweet textarea').focus();
     });
   });
 
