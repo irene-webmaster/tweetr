@@ -1,4 +1,4 @@
-#nav-bar {
+.nav-bar {
   background: #00a087;
   width: 100%;
   height: 80px;
@@ -9,21 +9,22 @@
   color: #e8fdff;
 }
 
-#nav-bar .nav-wrapper {
+.nav-bar .nav-wrapper {
   width: 800px;
   margin: 0 auto;
 }
 
-#nav-bar .logo, #nav-bar .header {
+.nav-bar .logo,
+.nav-bar .header {
   display: inline-block;
   vertical-align: middle;
 }
 
-#nav-bar .logo {
+.nav-bar .logo {
 
 }
 
-#nav-bar .header {
+.nav-bar .header {
   font-size: 1.8em;
 }
 

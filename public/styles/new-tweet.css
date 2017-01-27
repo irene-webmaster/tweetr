@@ -7,8 +7,8 @@
 }
 
 .new-tweet h2 {
-  padding: 0px;
   margin: 1em 0;
+  padding: 0px;
   border-bottom: solid 1px #666;
   font-size: 1.6em;
 }
@@ -46,8 +46,8 @@
 }
 
 .tweet .avatar {
-  border-radius: 3px;
   margin-right: 8px;
+  border-radius: 3px;
   opacity: 0.7;
 }
 
@@ -117,8 +117,8 @@
 }
 
 .fa-pencil-square-o {
-  vertical-align: middle;
   margin-right: 3px;
+  vertical-align: middle;
 }
 
 .social .fa-heart:hover {

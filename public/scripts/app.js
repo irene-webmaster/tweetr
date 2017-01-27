@@ -51,10 +51,8 @@ $(function() {
         } else {
           return quantity + ' ' + bracket.unit + ' ago';
         }
-
       }
     }
-
     return "Over a year ago";
   }
 
@@ -112,9 +110,8 @@ $(function() {
   $('.new-tweet').hide();
   $('.new-tweet .error').hide();
 
-
   // Compose button implementation
-  $('#nav-bar').find('.compose-btn').on('click', function(event) {
+  $('.nav-bar').find('.compose-btn').on('click', function(event) {
     event.preventDefault();
     $('#compose-tweet').slideToggle('slow', function() {
       $('#compose-tweet textarea').focus();
