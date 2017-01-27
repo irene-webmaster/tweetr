@@ -35,7 +35,7 @@ $(function() {
     }
 
     var brackets = [
-      {unit: 'minutes', maxValue: 3600, divisor: 60},
+      {unit: 'minute', maxValue: 3600, divisor: 60},
       {unit: 'hour', maxValue: 86400, divisor: 3600},
       {unit: 'day', maxValue: 86400 * 7, divisor: 86400},
       {unit: 'week', maxValue: 86400 * 30, divisor: 86400 * 7},
@@ -46,7 +46,12 @@ $(function() {
       var bracket = brackets[i];
       if (timeDiff < bracket.maxValue) {
         var quantity = Math.round(timeDiff / bracket.divisor);
-        return quantity + ' ' + bracket.unit + ' ago';
+        if(quantity !== 1) {
+          return quantity + ' ' + bracket.unit + 's ago';
+        } else {
+          return quantity + ' ' + bracket.unit + ' ago';
+        }
+
       }
     }
 

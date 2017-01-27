@@ -33,12 +33,12 @@
 
 .tweet {
   margin-bottom: 20px;
-  border: solid 1px #777;
+  border: solid 1px #ccc;
   border-radius: 4px;
 }
 
 .tweet header {
-  background-color: #ccc;
+  background-color: #dcdcdc;
   height: 70px;
   padding: 0.5em;
   border-top-left-radius: 4px;
@@ -48,9 +48,27 @@
 .tweet .avatar {
   border-radius: 3px;
   margin-right: 8px;
+  opacity: 0.7;
+}
+
+.tweet:hover {
+  border-color: #777;
+}
+
+.tweet:hover header {
+  background-color: #ccc;
+}
+
+.tweet:hover .avatar {
+  opacity: 1;
+}
+
+.tweet:hover .fullname {
+  color: #244751;
 }
 
 .tweet .fullname {
+  color: #777;
   font-size: 1.4em;
   vertical-align: top;
 }
@@ -96,4 +114,21 @@
   padding: 4px 7px 4px;
   border: solid 1px red;
   color: red;
+}
+
+.fa-pencil-square-o {
+  vertical-align: middle;
+  margin-right: 3px;
+}
+
+.social .fa-heart:hover {
+  color: red;
+}
+
+.social .fa-retweet:hover {
+  color: green;
+}
+
+.social .fa-flag:hover {
+  color: blue;
 }
