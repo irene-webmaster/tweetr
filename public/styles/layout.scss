@@ -1,0 +1,35 @@
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+@import 'nav';
+@import 'new-tweet';
+@import 'all-tweets';
+@import 'variables';
+
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*
+ * Global layout stuff
+ */
+
+body {
+  background-color: #eee;
+  font-family: $font-family;
+  color: #244751;
+  margin: 0;
+}
+
+.container {
+  background: #fff;
+  width: 450px;
+  padding: 9em 2em 2em;
+  margin: 0px auto;
+}

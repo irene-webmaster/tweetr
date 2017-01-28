@@ -1,0 +1,151 @@
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+.nav-bar {
+  background: #00a087;
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  z-index: 100;
+  top: 0px;
+  padding: 0 1em;
+  color: #e8fdff; }
+  .nav-bar .nav-wrapper {
+    width: 800px;
+    margin: 0 auto; }
+  .nav-bar .logo, .nav-bar .header {
+    display: inline-block;
+    vertical-align: middle; }
+  .nav-bar .header {
+    font-size: 1.8em; }
+
+.compose-btn {
+  background-color: #ccc;
+  display: inline-block;
+  float: right;
+  margin-top: 15px;
+  padding: 0.5em;
+  border: solid 1px #666;
+  border-radius: 5px;
+  font-size: 1.3em;
+  color: #00a087;
+  text-decoration: none; }
+
+.compose-btn:hover {
+  background-color: #fff; }
+
+.fa-pencil-square-o {
+  margin-right: 3px;
+  vertical-align: middle; }
+
+.new-tweet {
+  background-color: #ccc;
+  margin-bottom: 40px;
+  padding: 1em;
+  border: solid 1px #777;
+  border-radius: 4px; }
+  .new-tweet h2 {
+    margin: 0 0 1em;
+    padding: 0 0 0.3em;
+    border-bottom: solid 1px #777;
+    font-size: 1.6em; }
+  .new-tweet .editor {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 0.5em;
+    padding: 0.5em; }
+  .new-tweet .counter {
+    float: right;
+    padding-top: 0.2em;
+    font-size: 0.9em;
+    font-style: italic; }
+
+.negative-num {
+  color: red; }
+
+.error {
+  background-color: #ffccbb;
+  margin-bottom: 10px;
+  padding: 0.33333em;
+  border: solid 1px red;
+  color: red; }
+
+.tweet {
+  margin-bottom: 20px;
+  border: solid 1px #ccc;
+  border-radius: 4px; }
+  .tweet .tweet:hover {
+    border-color: #777; }
+  .tweet header {
+    background-color: #dcdcdc;
+    height: 68px;
+    padding: 0.5em;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px; }
+  .tweet:hover header {
+    background-color: #ccc; }
+  .tweet .avatar {
+    margin-right: 1em;
+    border-radius: 3px;
+    opacity: 0.7; }
+  .tweet:hover .avatar {
+    opacity: 1; }
+  .tweet .fullname {
+    color: #777;
+    font-size: 1.4em;
+    vertical-align: top; }
+  .tweet:hover .fullname {
+    color: #244751; }
+  .tweet .username {
+    float: right;
+    padding-top: 0.5em;
+    color: #666;
+    font-size: 0.9em;
+    font-weight: 300; }
+  .tweet .tweet-body {
+    padding: 2em 1em;
+    word-wrap: break-word; }
+  .tweet footer {
+    height: 40px;
+    padding: 1em;
+    border-top: solid 1px #ccc;
+    color: #888;
+    font-size: 0.9em;
+    font-weight: 300; }
+  .tweet:hover .social {
+    display: block; }
+
+.social {
+  display: none;
+  float: right; }
+  .social i {
+    margin-left: 1em; }
+  .social .fa-heart:hover {
+    color: red; }
+  .social .fa-retweet:hover {
+    color: green; }
+  .social .fa-flag:hover {
+    color: blue; }
+
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+/*
+ * Global layout stuff
+ */
+body {
+  background-color: #eee;
+  font-family: "Roboto Condensed", sans-serif;
+  color: #244751;
+  margin: 0; }
+
+.container {
+  background: #fff;
+  width: 450px;
+  padding: 9em 2em 2em;
+  margin: 0px auto; }

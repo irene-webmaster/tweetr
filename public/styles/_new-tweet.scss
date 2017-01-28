@@ -1,0 +1,44 @@
+@import 'variables';
+
+.new-tweet {
+  background-color: $primary-color;
+  margin-bottom: 40px;
+  padding: $spacing-unit;
+  border: solid 1px $primary-color-darker;
+  border-radius: 4px;
+
+  h2 {
+    margin: 0 0 $spacing-unit;
+    padding: 0 0 0.3em;
+    border-bottom: solid 1px $primary-color-darker;
+    font-size: 1.6em;
+  }
+
+  .editor {
+    width: 100%;
+    height: 60px;
+    margin-bottom: $spacing-unit/2;
+    padding: $spacing-unit/2;
+  }
+
+  .counter {
+    float: right;
+    padding-top: 0.2em;
+    font: {
+      size: 0.9em;
+      style: italic;
+    }
+  }
+}
+
+.negative-num {
+  color: red;
+}
+
+.error {
+  background-color: #ffccbb;
+  margin-bottom: 10px;
+  padding: $spacing-unit/3;
+  border: solid 1px red;
+  color: red;
+}

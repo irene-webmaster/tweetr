@@ -1,0 +1,92 @@
+.tweet {
+  margin-bottom: 20px;
+  border: solid 1px $primary-color;
+  border-radius: 4px;
+
+  .tweet:hover {
+    border-color: $primary-color-darker;
+  }
+
+  header {
+    background-color: #dcdcdc;
+    height: 68px;
+    padding: $spacing-unit/2;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+
+  &:hover header {
+    background-color: $primary-color;
+  }
+
+  .avatar {
+    margin-right: $spacing-unit;
+    border-radius: 3px;
+    opacity: 0.7;
+  }
+
+  &:hover .avatar {
+    opacity: 1;
+  }
+
+  .fullname {
+    color: $primary-color-darker;
+    font-size: 1.4em;
+    vertical-align: top;
+  }
+
+  &:hover .fullname {
+    color: #244751;
+  }
+
+  .username {
+    float: right;
+    padding-top: $spacing-unit/2;
+    color: #666;
+    font: {
+      size: 0.9em;
+      weight: 300;
+    }
+  }
+
+  .tweet-body {
+    padding: $spacing-unit*2 $spacing-unit;
+    word-wrap: break-word;
+  }
+
+  footer {
+    height: 40px;
+    padding: $spacing-unit;
+    border-top: solid 1px #ccc;
+    color: #888;
+    font: {
+      size: 0.9em;
+      weight: 300;
+    }
+  }
+
+  &:hover .social {
+    display: block;
+  }
+}
+
+.social {
+  display: none;
+  float: right;
+
+  i {
+    margin-left: $spacing-unit;
+  }
+
+  .fa-heart:hover {
+    color: red;
+  }
+
+  .fa-retweet:hover {
+    color: green;
+  }
+
+  .fa-flag:hover {
+    color: blue;
+  }
+}
