@@ -1,0 +1,18 @@
+<% include partials/_header %>
+
+    <main class="container">
+      <section class="new-tweet" id="compose-tweet">
+        <h2>Compose Tweet</h2>
+        <div class="error"></div>
+        <form method="post" action="/tweets">
+          <textarea name="text" placeholder="What are you humming about?" class="editor"></textarea>
+          <input type="submit" value="Tweet">
+          <span class="counter"></span>
+        </form>
+      </section>
+      <section id="tweets-container">
+
+      </section>
+    </main>
+  </body>
+</html>

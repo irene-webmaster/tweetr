@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <title>Tweeter - Home Page</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="/styles/stylesheet.css" type="text/css" />
@@ -16,25 +17,21 @@
       <div class="nav-wrapper">
         <img class="logo" src="/images/bird.png" width="80px" height="80px">
         <span class="header">Tweeter</span>
-        <a href="#" class="compose-btn">
-        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>Compose
-        </a>
+
+        <% if(user) { %>
+          Hello, <%= user.email %>
+          <a href="#" class="compose-btn">
+            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            Compose
+          </a>
+          <form method="POST" action="/logout" class="log-form">
+            <button>logout</button>
+          </form>
+
+        <% } else { %>
+          <a href="/login">Login</a> / <a href="/register">Sing Up</a>
+        <% } %>
       </div>
     </nav>
 
-    <main class="container">
-      <section class="new-tweet" id="compose-tweet">
-        <h2>Compose Tweet</h2>
-        <div class="error"></div>
-        <form method="post" action="/tweets">
-          <textarea name="text" placeholder="What are you humming about?" class="editor"></textarea>
-          <input type="submit" value="Tweet">
-          <span class="counter"></span>
-        </form>
-      </section>
-      <section id="tweets-container">
 
-      </section>
-    </main>
-  </body>
-</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Tweeter - Home Page</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/stylesheet.css" type="text/css" />
+    <script src="https://use.fontawesome.com/6a1ef489aa.js"></script>
+    <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+  </head>
+
+  <body>
+    <nav class="nav-bar">
+      <div class="nav-wrapper">
+        <img class="logo" src="/images/bird.png" width="80px" height="80px">
+        <span class="header">Tweeter</span>
+        <a href="#" class="compose-btn">
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>Compose
+        </a>
+      </div>
+    </nav>
+
+    <main class="container">
+      <section class="new-tweet" id="compose-tweet">
+        <h2>Compose Tweet</h2>
+        <div class="error"></div>
+        <form method="post" action="/tweets">
+          <textarea name="text" placeholder="What are you humming about?" class="editor"></textarea>
+          <input type="submit" value="Tweet">
+          <span class="counter"></span>
+        </form>
+      </section>
+      <section id="tweets-container">
+
+      </section>
+    </main>
+  </body>
+</html>
