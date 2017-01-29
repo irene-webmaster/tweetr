@@ -18,19 +18,26 @@
         <img class="logo" src="/images/bird.png" width="80px" height="80px">
         <span class="header">Tweeter</span>
 
-        <% if(user) { %>
-          Hello, <%= user.email %>
-          <a href="#" class="compose-btn">
-            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-            Compose
-          </a>
-          <form method="POST" action="/logout" class="log-form">
-            <button>logout</button>
-          </form>
 
-        <% } else { %>
-          <a href="/login">Login</a> / <a href="/register">Sing Up</a>
-        <% } %>
+          <% if(user) { %>
+            <form method="POST" action="/logout" class="log-form">
+              <button>logout</button>
+            </form>
+            <a href="#" class="compose-btn">
+              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+              Compose
+            </a>
+            <div class="user-header">
+              Hello, <%= user.name %>
+            </div>
+
+
+          <% } else { %>
+            <div class="user-header">
+              <a href="/login">Login</a> / <a href="/register">Sign Up</a>
+            </div>
+          <% } %>
+
       </div>
     </nav>
 

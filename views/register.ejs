@@ -3,8 +3,16 @@
     <main class="container">
       <h2>Create an Account</h2>
       <form method="post" accept="/register" class="login-form">
-        <input type="email" name="email">
-        <input type="password" name="password">
+        <label id="email">Email</label>
+        <input type="email" name="email" id="email">
+        <label id="password">Password</label>
+        <input type="password" name="password" id="password">
+        <label id="name">Name</label>
+        <input type="text" name="name" id="name">
+        <label id="handle">Username</label>
+        <input type="text" name="handle" placeholder="@handle" id="handle">
+        <label id="avatar">Avatar</label>
+        <input type="text" name="avatar" id="avatar">
         <button>create account</button>
       </form>
     </main>

@@ -10,4 +10,9 @@
     margin-bottom: 15px;
     padding: $spacing-unit $spacing-unit/2;
   }
+
+  label {
+    display:block;
+    padding-bottom: 5px;
+  }
 }

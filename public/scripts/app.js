@@ -9,7 +9,7 @@ $(function() {
     var $header = $('<header>');
     var $body = $('<div>').addClass('tweet-body').text(tweet.content.text);
     var $footer = $('<footer>').text(calculateTime(tweet));
-    var $avatar = $('<img />', {src: tweet.user.avatars.small}).addClass('avatar');
+    var $avatar = $('<img />', {src: tweet.user.avatar}).addClass('avatar');
     var $fullname = $('<span>').addClass('fullname').text(tweet.user.name);
     var $username = $('<span>').addClass('username').text(tweet.user.handle);
     var $social = $('<div>').addClass('social');
@@ -58,6 +58,12 @@ $(function() {
 
   function renderTweets(tweets) {
     $('#tweets-container').html('');
+
+    if(tweets.length == 0) {
+      $('#tweets-container').prepend("<div>No tweets so far</div>");
+      return;
+    }
+
     for(var tweet of tweets) {
       var singleTweet = createTweetElement(tweet);
       $('#tweets-container').prepend(singleTweet);

@@ -14,18 +14,29 @@
   color: #e8fdff; }
   .nav-bar .nav-wrapper {
     width: 800px;
+    height: 80px;
     margin: 0 auto; }
   .nav-bar .logo, .nav-bar .header {
-    display: inline-block;
+    display: inline;
     vertical-align: middle; }
   .nav-bar .header {
     font-size: 1.8em; }
+  .nav-bar .log-form {
+    float: right; }
+    .nav-bar .log-form button {
+      background: none;
+      padding: 0;
+      border: 0px;
+      line-height: 80px;
+      font-size: 1.2em;
+      color: #fff;
+      cursor: pointer; }
 
 .compose-btn {
   background-color: #ccc;
-  display: inline-block;
+  display: inline;
   float: right;
-  margin-top: 15px;
+  margin: 15px 10px;
   padding: 0.5em;
   border: solid 1px #666;
   border-radius: 5px;
@@ -39,6 +50,15 @@
 .fa-pencil-square-o {
   margin-right: 3px;
   vertical-align: middle; }
+
+.user-header {
+  display: inline;
+  height: 80px;
+  float: right;
+  font-size: 1.2em;
+  line-height: 80px; }
+  .user-header a {
+    color: #fff; }
 
 .new-tweet {
   background-color: #ccc;
@@ -137,6 +157,9 @@
     height: 35px;
     margin-bottom: 15px;
     padding: 1em 0.5em; }
+  .login-form label {
+    display: block;
+    padding-bottom: 5px; }
 
 html {
   box-sizing: border-box; }
@@ -158,3 +181,6 @@ body {
   width: 450px;
   padding: 9em 2em 2em;
   margin: 0px auto; }
+
+a {
+  color: #244751; }

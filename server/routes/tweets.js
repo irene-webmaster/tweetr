@@ -13,7 +13,25 @@ module.exports = function(DataHelpers) {
       if (err) {
         res.status(500).json({ error: err.message });
       } else {
-        res.json(tweets);
+        let counter = 0;
+        const numTweets = tweets.length;
+
+        if(numTweets == 0) {
+          res.json([]);
+          return;
+        }
+
+        for(let i = 0; i < numTweets; i++) {
+          DataHelpers.getUserById(tweets[i].userId, (err, user) => {
+            tweets[i].user = user;
+
+            counter++;
+
+            if(counter == numTweets) {
+              res.json(tweets);
+            }
+          });
+        }
       }
     });
   });
@@ -24,9 +42,8 @@ module.exports = function(DataHelpers) {
       return;
     }
 
-    const user = req.body.user ? req.body.user : userHelper.generateRandomUser();
     const tweet = {
-      user: user,
+      userId: res.locals.user._id,
       content: {
         text: req.body.text
       },

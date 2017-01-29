@@ -92,14 +92,17 @@ module.exports = function(DataHelpers, app) {
     if (res.locals.user) {
       res.redirect("/")
     } else {
-      let email = req.body.email;
+      const email = req.body.email;
       const password = req.body.password;
+      const name = req.body.name;
+      const handle = req.body.handle;
+      const avatar = req.body.avatar;
 
-      if(!email || !password) {
-        res.status(400).render("error", {errMessage: "Incorrect email or password"});
+      if(!email || !password || !name || !handle || !avatar) {
+        res.status(400).render("error", {errMessage: "Please fill the form"});
         return
       }
-      const hashed_password = bcrypt.hashSync(password, 10);
+      const hashedPassword = bcrypt.hashSync(password, 10);
 
       DataHelpers.getUser(email, (err, user) => {
         if (err) {
@@ -109,7 +112,14 @@ module.exports = function(DataHelpers, app) {
           if(user) {
             res.status(404).render("error", {errMessage: "Incorrect email or password"});
           } else {
-            const newUser = {"email": req.body.email, "password": hashed_password};
+            const newUser = {
+              email: email,
+              password: hashedPassword,
+              name: name,
+              handle: handle,
+              avatar: avatar
+            };
+
             DataHelpers.saveUser(newUser, (err, userId) => {
               if (err) {
                 res.status(500).render("error", {errMessage: err.message});
